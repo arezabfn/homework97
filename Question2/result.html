@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Result</title>
+    <script src="js/jquery-3.6.1.min.js"></script>
+
+</head>
+<body>
+<button><a href="index.html">Back To Home</a></button>
+</body>
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        $("#ok").click(function (){
+            // window.some_variable = ;
+            var x = "<?=$_POST['dob']?>".split('/');
+
+            let date = new PersianDate([x[0],x[1],x[2]],'j');
+            // console.log(date.diffForHumans(new PersianDate()));
+            // console.log(date.diff(new PersianDate()));
+
+            // let p = new PersianDate("1379/3/20","j")
+            let p = date;
+            var month = p.diff("1401/8/1", "month");
+
+            console.log(month/12);
+            console.log(x);
+
+            console.log(p.diff("1401/8/1", "date")); // 31
+
+            console.log( p.diffForHumans('1401/08/1') + ' days');
+
+        });
+
+
+    });
+</script>
+</html>

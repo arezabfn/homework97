@@ -1,0 +1,123 @@
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href="library/bootstrap-5/bootstrap.min.css" rel="stylesheet" />
+        <script src="library/bootstrap-5/bootstrap.bundle.min.js"></script>
+        <script src="library/dselect.js"></script>
+        <script src="jquery-3.6.1.min.js"></script>
+        <link rel="stylesheet" href="library/card.css">
+
+
+        <title>اوقات شرعی</title>
+    </head>
+    <body>
+
+        <div class="container">
+            <h1 class="mt-2 mb-3 text-center text-warning">اوقات شرعی استانی کشور ایران</h1>
+            <div class="row">
+                <div class="col-md-3">&nbsp;</div>
+                <div class="col-md-6">
+                    <select name="select_box" class="form-select mt-4 p-2" id="select_box">
+                        <option value="">استان مورد نظر را انتخاب کنید</option>
+                    </select>
+                    <select name="day" class="ali mt-4 p-2 text-center" id="day">
+                        <option value="">ایام هفته را مشخص کنید</option>
+                        <option value="شنبه">شنبه</option>
+                        <option value="یکشنبه">یکشنبه</option>
+                        <option value="دوشنبه">دوشنبه</option>
+                        <option value="سه شنبه">سه شنبه</option>
+                        <option value="چهارشنبه">چهارشنبه</option>
+                        <option value="پنج شنبه">پنج شنبه</option>
+                        <option value="جمعه">جمعه</option>
+                    </select>
+                </div>
+                <div class="col-md-3">&nbsp;</div>
+            </div>
+            <br />
+        </div>
+        <div class="card">
+
+        </div>
+
+    </body>
+</html>
+<script>
+    $(".card").hide();
+    $("#day").hide();
+
+    $("select.form-select").change (function () {
+        var city = $(this).children("option:selected").val();
+        var url = `https://api.keybit.ir/owghat/?city=${city}`;
+        $(".card").text("");
+        $(".card").html(``);
+        $("#day").show();
+            $.ajax({
+                url : url,
+                type:"get",
+                success :function (res){
+
+                    $(".card").html( `<h3 style="color: gold;justify-content:start"><br> اوقات شرعی ${city}<br></h3>` +
+                        "<div><img id='theImg'  style='width: 30px;float: right;margin: 10px;' src='morn.ico' />اذان صبح <span style='color: goldenrod'>:</span> " +res.result.azan_sobh +"</div>"  +
+                        "<div><img id='theImg'  style='width: 30px;float: right;margin: 10px;' src='sunrise.ico' />طلوع آفتاب <span style='color: goldenrod'>:</span> " + res.result.tolu_aftab + " </div>" +
+                        "<div><img id='theImg'  style='width: 30px;float: right;margin: 10px;' src='sun.ico' />اذان ظهر <span style='color: goldenrod'>:</span> " +res.result.azan_zohr + "</div>"+
+                        "<div><img id='theImg'  style='width: 30px;float: right;margin: 10px;' src='sunrise.ico' />غروب آفتاب <span style='color: goldenrod'>:</span> " + res.result.ghorub_aftab + "</div>" +
+                        "<div><img id='theImg'  style='width: 30px;float: right;margin: 10px;' src='evening.ico' />اذان مغرب <span style='color: goldenrod'>:</span> " + res.result.azan_maghreb + "</div>" +
+                        "<div><img id='theImg'  style='width: 30px;float: right;margin: 10px;' src='mid.ico' />نیمه شب <span style='color: goldenrod'>:</span> " + res.result.nimeshab + "</div>" +
+                        "<div><img id='theImg'  style='width: 30px;float: right;margin: 10px;' src='date.ico' />تاریخ امروز <span style='color: goldenrod'>:</span> 1401" + "/"+ res.result.month  + "/"+ res.result.day + " </div>"
+                    )
+
+                },
+                error:function (e){
+
+                }
+            })
+        console.log(city);
+
+    });
+    $("select.ali").change (function () {
+        var day = $(this).children("option:selected").val();
+        $(".card").show();
+
+    });
+
+</script>
+
+<script>
+    var x = document.getElementById("select_box");
+    const city = ["کرمان","اصفهان","بوشهر","کرج", "تهران", "ایلام",
+        "اردبیل", "شیراز", "قم", "سنندج", "قزوین",
+        "سمنان", "یزد", "بندرعباس", "کرمانشاه",
+        "زنجان", "اهواز", "ساری", "کوهدشت",
+        "رشت", "همدان", "اراک", "گلستان", "تبریز",
+        "ارومیه", "شهرکرد",
+        "بیرجند", "یاسوج",
+        "زاهدان", "بجنورد", "مشهد",
+    ];
+
+    for(let i=0; i< city.length; i++)
+    {
+        const e = document.createElement("option");
+        e.text = city[i];
+        e.value =city[i];
+        x.add(e);
+
+    }
+</script>
+
+
+<script>
+
+    var select_box_element = document.querySelector('#select_box');
+
+    dselect(select_box_element, {
+        search: true,
+        lang:"fa",
+
+    });
+
+
+</script>

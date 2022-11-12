@@ -1,0 +1,75 @@
+body{
+    background: #bdc3c7;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    /*width: 250px;*/
+    box-shadow: 2px 4px 8px 5px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+}
+.row {
+    margin: 2px auto !important;
+
+    border-radius: 15px;
+}
+.container{
+    width: 50% !important;
+    margin: auto !important;
+    margin-bottom: 10px !important;
+    /*background-color: #74a3d3;*/
+    padding: 5px !important;
+    border-radius: 10px;
+}
+.btng{
+    color: yellow !important;
+    background: #0B486B;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #F56217, #0B486B);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #F56217, #0B486B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+
+/* DatePicker */
+
+.datepicker-plot-area {
+    font: 15px 'vazir' !important;
+}
+
+.pwt-btn-today {
+    float: none !important;
+    font-size: 13px !important;
+    margin:  0 0 5px 0 !important;
+    display: inline-block !important;
+    background-color: #0d6efd !important;
+    color: white !important;
+    border-radius: 5px !important;
+    padding: 5px !important;
+    line-height: 15px !important;
+}
+
+.datepicker-plot-area {
+    border-radius: 5px !important;
+    border: 1px solid #d63384 !important;
+    padding: 5px !important;
+    min-width: 225px !important;
+}
+
+.datepicker-plot-area .datepicker-day-view .table-days td.selected span, .datepicker-plot-area .datepicker-year-view .year-item.selected, .datepicker-plot-area .datepicker-month-view .month-item.selected {
+    border-radius: 5px !important;
+    background-color: #198754!important;
+}
+
+.datepicker-plot-area .datepicker-day-view .table-days td.today span {
+    border-radius: 5px !important;
+    background-color: #0d6efd!important;
+}
+
+.datepicker-plot-area .datepicker-day-view .table-days td.selected span .datepicker-plot-area .datepicker-day-view .table-days td:hover, .datepicker-plot-area .datepicker-day-view .table-days td span:hover, .datepicker-plot-area .datepicker-year-view .year-item:hover, .datepicker-plot-area .datepicker-month-view .month-item:hover {
+    background-color: #ffc107 !important;
+    border-radius: 5px !important;
+}
+
+.text-danger {
+    color: #dc3545 !important;
+}
+
+/* Date Picker end */

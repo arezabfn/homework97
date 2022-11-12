@@ -1,0 +1,46 @@
+body{
+    background-color: #22394d !important;
+}
+.main {
+    background-color: #000000;
+    margin: 50px auto 30px auto;
+    width:80%;
+    text-align: center;
+    color: yellow;
+    padding:20px;
+    font-size: 35px;
+    border-radius: 20px;
+    height: 100px;
+    font-family: "Bell MT";
+}
+img{
+    width: 580px;
+    border-radius: 10px;
+    opacity: 80%;
+    margin: auto 31% auto;
+}
+.main2 {
+    background-color: #000000;
+    margin: 50px auto 30px auto;
+    width:85%;
+    /*color: #ede664;*/
+    padding:20px;
+    font-size: 25px;
+    border-radius: 20px;
+    text-align: center;
+    direction: rtl;
+    color: azure;
+    font-family: "Calibri";
+}
+
+.btns{
+    display: flex;
+    margin-bottom: 10px;
+}
+.btn{
+    margin:auto 45%!important;
+    padding: 10px !important;
+    font-size: 30px !important;
+    font-family: Calibri !important ;
+
+}
