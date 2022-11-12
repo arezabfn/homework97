@@ -83,7 +83,7 @@ next_btn.onclick = ()=>{
         que_count++;
         que_numb++;
         let generateNum =Math.floor(Math.random() * (15 - que_count) + que_count);
-        showQuetions(generateNum);
+        showQuetions(que_count);
         queCounter(que_numb);
         clearInterval(counter);
         clearInterval(counterLine);
